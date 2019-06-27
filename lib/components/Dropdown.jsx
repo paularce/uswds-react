@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import InputLabel from './InputLabel';
-import Utilities from '../helpers/utilities';
+import React, { Component, PropTypes } from "react";
+import InputLabel from "./InputLabel";
+import Utilities from "../helpers/utilities";
 
 /**
  * Class representing a dropdown
@@ -30,7 +30,7 @@ export default class Dropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value || '',
+      value: this.props.value || "",
       hasError: this.props.errorMessage ? true : false,
       errorMessageBody: this.props.errorMessage ? this.props.errorMessage : null
     };
@@ -40,13 +40,15 @@ export default class Dropdown extends Component {
    * check to see if an Id was passed in, if not generate one.
    */
   componentWillMount() {
-    this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
+    this.id = this.props.id
+      ? this.props.id
+      : Utilities.uniqueIdForComponent(this);
   }
 
   /**
    * If a errorMessage is passed after initial render, adjust the state accordingly
    */
-  componentWillReceiveProps({errorMessage}) {
+  componentWillReceiveProps({ errorMessage }) {
     if (errorMessage) {
       this.setState({
         hasError: true,
@@ -72,7 +74,7 @@ export default class Dropdown extends Component {
     let errorMessage = null;
     if (this.state.hasError) {
       errorMessage = (
-        <span className="usa-input-error-message" role="alert">
+        <span className="usa-error-message" role="alert">
           {this.state.errorMessageBody}
         </span>
       );
@@ -80,25 +82,35 @@ export default class Dropdown extends Component {
 
     let emptyPlaceholder = null;
 
-    if (this.state.value == '') {
-      emptyPlaceholder = (<option disabled value="">Select ...</option>);
+    if (this.state.value == "") {
+      emptyPlaceholder = (
+        <option disabled value="">
+          Select ...
+        </option>
+      );
     }
 
     return (
-      <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
-        <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
+      <React.Fragment>
+        <InputLabel
+          htmlFor={this.id}
+          required={this.props.required}
+          label={this.props.label}
+        />
 
         {errorMessage}
 
         <select
+          className="usa-select"
           name={this.props.id}
           id={this.id}
           value={this.state.value}
-          onChange={this._handleChange.bind(this)} >
-            {emptyPlaceholder}
-            {this.props.children}
+          onChange={this._handleChange.bind(this)}
+        >
+          {emptyPlaceholder}
+          {this.props.children}
         </select>
-      </div>
+      </React.Fragment>
     );
   }
 }
