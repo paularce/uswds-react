@@ -1,32 +1,77 @@
+/*! uswds @version */
 
-// Vendor
-$output-bourbon-deprecation-warnings: false;
-@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
-@import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
-@import "../../node_modules/normalize.css/normalize";
+/*
+========================================
+uswds.scss
+----------------------------------------
+Output all USWDS
+- fonts
+- components
+- utilities
+- layout grid
+----------------------------------------
+*/
 
-// Core
-@import "core/variables";
-@import "core/fonts";
-@import "core/base";
-@import "core/grid";
-@import "core/utilities";
-@import "core/typography";
+// Settings
+// -------------------------------------
+@import 'settings/settings-general';
+@import 'settings/settings-typography';
+@import 'settings/settings-color';
+@import 'settings/settings-spacing';
+@import 'settings/settings-utilities';
+@import 'settings/settings-components';
 
-// To replace...
-@import "elements/buttons";
-@import "elements/inputs";
-@import "elements/labels";
-@import "elements/list";
-@import "elements/tables";
+// Tools
+// -------------------------------------
+@import 'core/functions';
+@import 'core/system-tokens';
+@import 'core/variables';
+@import 'core/properties';
+@import 'core/mixins/all';
+
+// Generic
+// -------------------------------------
+@import 'core/font-face';
+@import 'lib/normalize';
+@import 'core/base';
+
+// Elements
+// -------------------------------------
+@import 'elements/buttons';
+@import 'elements/embed';
+@import 'elements/figure';
+@import 'elements/inputs';
+@import 'elements/list';
+@import 'elements/table';
+@import 'elements/tags';
+@import 'elements/typography';
 
 // Components
-@import "components/Accordion";
-@import "components/OfficialSiteBanner";
-@import "components/Header";
-@import "components/SearchField";
-@import "components/Sidebar";
-@import "components/Alerts";
+// -------------------------------------
+@import 'components/accordions';
+@import 'components/alerts';
+@import 'components/banner';
+@import 'components/checklist';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/graphic-list';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/layout';
+@import 'components/media-block';
+@import 'components/navigation';
+@import 'components/search';
+@import 'components/section';
+@import 'components/sidenav';
+@import 'components/skipnav';
 
-//Fixes
-@import "fixes/fixes";
+// Layout grid
+// -------------------------------------
+@import 'core/layout-grid';
+
+// Utilities
+// -------------------------------------
+@import 'utilities/palettes/all';
+@import 'utilities/rules/all';
+@import 'utilities/rules/package';
+@include render-utilities-in($utilities-package);
