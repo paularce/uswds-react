@@ -24,10 +24,10 @@ export default function Alert ({type, title, body, role}) {
   }
 
   return (
-    <div className={`usa-alert usa-alert-${type}`} role={role}>
-      <div className="usa-alert-body">
-        <h3 className="usa-alert-heading">{title}</h3>
-        <div className="usa-alert-text">{body}</div>
+    <div className={`usa-alert usa-alert--${type}`} role={role}>
+      <div className="usa-alert__body">
+        <h3 className="usa-alert__heading">{title}</h3>
+        <div className="usa-alert__text">{body}</div>
       </div>
     </div>
   );
