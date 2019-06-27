@@ -121,7 +121,7 @@ export class Accordion extends React.Component
 }
 
 Accordion.TYPE_BORDERLESS = "usa-accordion";
-Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
+Accordion.TYPE_BORDERED   = "usa-accordion--bordered";
 
 Accordion.propTypes = {
   type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
@@ -248,12 +248,14 @@ export class AccordionItem extends React.Component
       element = children[0];
     }
     return (
-      <button className="usa-accordion-button" 
+      <titleElement class="usa-accordion__heading">
+        <button className="usa-accordion__button" 
               aria-expanded={this.props.expanded}
               aria-controls={`${this.state.uuid}-content`}
               onClick={this.makeActive.bind(this)}>
         {element}
       </button>
+      </titleElement>
     );
   }
   
@@ -273,7 +275,7 @@ export class AccordionItem extends React.Component
     let children = React.Children.toArray(this.props.children);
     let element = (children.length == 2) ? children[1] : children[0];
     return (
-      <div id={`${this.state.uuid}-content`} className="usa-accordion-content">
+      <div id={`${this.state.uuid}-content`} className="usa-accordion__content usa-prose">
         {element}
       </div>
     );
@@ -292,24 +294,26 @@ export class AccordionItem extends React.Component
     }
     
     return (
-      <div className="usa-accordion-item">
+      <React.Fragment>
         {this.renderTitleElement()}
         {this.renderContentElement()}
-      </div>
+      </React.Fragment>
     );
   }
 }
 
 AccordionItem.propTypes = {
-  title: React.PropTypes.string,
-  children: React.PropTypes.node,
   accordionIndex: React.PropTypes.number,
+  action: React.PropTypes.func,
+  children: React.PropTypes.node,
   expanded: React.PropTypes.bool,
-  action: React.PropTypes.func
+  title: React.PropTypes.string,
+  titleElement: React.PropTypes.string
 };
 
 AccordionItem.defaultProps = {
-  title: "",
+  action: function() {},
   expanded: false,
-  action: function() {}
+  title: "",
+  titleElement: 'h2'
 };
