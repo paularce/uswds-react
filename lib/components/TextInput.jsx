@@ -75,15 +75,15 @@ export default class TextInput extends Component {
     let error = null;
     if (this.state.hasError) {
       error = (
-        <span className="usa-input-error-message" role="alert">
+        <span className="usa-error-message" role="alert">
           {this.state.errorMessage}
         </span>
       );
     }
 
     return (
-      <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
-        <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
+      <div className={`usa-input ${this.state.hasError ? 'usa-input--error' : ''}`}>
+        <InputLabel label={this.props.label} htmlFor={this.id} hasError={this.state.hasError} required={this.props.required} />
 
         {error}
 
@@ -92,7 +92,7 @@ export default class TextInput extends Component {
           name={this.props.id}
           type={this.props.type}
           value={this.state.value}
-          className={this.state.isValid ? 'usa-input-success' : null}
+          className={`usa-input ${this.state.isValid ? 'usa-input--success' : null}`}
           required={this.props.required}
           aria-required={this.props.required}
           aria-labelledby={`${this.props.id}-label`}
