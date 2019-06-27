@@ -89,7 +89,7 @@ export class Table extends Component {
    */
   render() {
     return (
-      <table className={this.props.borderless ? 'usa-table-borderless' : null}>
+      <table className={`usa-table ${this.props.borderless ? 'usa-table--borderless' : ''}`}>
         {/* If a caption was provided, render it */}
         {this.props.caption
           ? <caption>{this.props.caption}</caption>
