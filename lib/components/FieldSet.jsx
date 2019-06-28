@@ -19,7 +19,7 @@ export default function FieldSet(props) {
   }
 
   return (
-    <fieldset className="usa-fieldset-inputs usa-sans" {...otherProps}>
+    <fieldset className="usa-fieldset" {...otherProps}>
       <legend className="usa-sr-only">
         {legend}
       </legend>
