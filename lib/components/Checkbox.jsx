@@ -30,16 +30,16 @@ export default class Checkbox extends Component {
   render() {
     const {label, value, name, className, disabled, id = this.id, ...otherProps} = this.props;
     return (
-      <div className={className}>
+      <div className={`usa-checkbox ${className}`}>
         <input
           id={id}
+          class="usa-checkbox__input"
           type="checkbox"
           name={name}
           value={value ? value : id}
           disabled={disabled || false}
           {...otherProps} />
-
-        <InputLabel htmlFor={id} label={label} />
+        <label className="usa-checkbox__input" htmlFor={id}>{label}</label>
       </div>
     );
   }

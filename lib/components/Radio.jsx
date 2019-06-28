@@ -32,15 +32,16 @@ export default class Radio extends Component {
     const {label, className, disabled, id = this.id, value, ...otherProps} = this.props;
 
     return (
-      <div className={className}>
+      <div className={`usa-radio ${className}`}>
         <input
+          className="usa-radio__input"
           type="radio"
           disabled={disabled}
           aria-disabled={disabled}
           id={id}
           value={value ? value : id}
           {...otherProps}/>
-        <InputLabel htmlFor={id} label={label} />
+        <label class="usa-radio__label" htmlFor={id}>{label}</label>
       </div>
     );
   }
