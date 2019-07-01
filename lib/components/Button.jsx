@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Provides a standard button component.
@@ -78,15 +79,15 @@ Button.STATUS_ACTIVE = 'active';
 Button.STATUS_HOVER = 'hover';
 
 Button.propTypes = {
-  disabled: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
-  size: React.PropTypes.oneOf(['', Button.SIZE_BIG]),
-  status: React.PropTypes.oneOf(['', Button.STATUS_ACTIVE, Button.STATUS_HOVER]),
-  text: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  size: PropTypes.oneOf(['', Button.SIZE_BIG]),
+  status: PropTypes.oneOf(['', Button.STATUS_ACTIVE, Button.STATUS_HOVER]),
+  text: PropTypes.string.isRequired,
+  type: PropTypes.string
 };
 
-yButton.defaultProps = {
+Button.defaultProps = {
   disabled: false,
   size: '',
   status: '',

@@ -96,7 +96,7 @@ describe('Dropdown', () => {
 
   it('updates when props change to include an error message', () => {
     const message = 'error message';
-    const Parent = React.createClass({
+    const Parent = () => {
       getInitialState() {
         return {errorMessage: null};
       },
@@ -107,7 +107,7 @@ describe('Dropdown', () => {
           <option value="value3">Option C</option>
         </Dropdown>);
       }
-    });
+    };
     const wrapper = mount(<Parent />);
     wrapper.setState({errorMessage: message});
     expect(wrapper.find('.usa-input-error-message').text()).toBe(message);

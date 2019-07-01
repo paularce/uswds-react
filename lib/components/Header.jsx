@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import OfficialSiteBanner from "./OfficialSiteBanner";
 // import NavigationBar from "./NavigationBar";
@@ -57,5 +58,5 @@ export default class Header extends React.Component
 }
 
 Header.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: PropTypes.string.isRequired
 };

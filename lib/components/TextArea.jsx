@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import InputLabel from './InputLabel';
 import Utilities from '../helpers/utilities';
 
@@ -14,7 +15,7 @@ import Utilities from '../helpers/utilities';
  * - required: bool, defaults to false. Adds required label, required attribute and aria-required='true'
  * - errorMessage: string. If present triggers the error state and displays the error message
  */
-export default class TextArea extends Component {
+export default class TextArea extends React.Component {
   /**
    * constructor
    * @param {Object} props The props that will be applied to this component.

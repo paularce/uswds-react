@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import InputLabel from './InputLabel';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Utilities from '../helpers/utilities';
 
 /**
@@ -15,7 +15,7 @@ import Utilities from '../helpers/utilities';
  * - checked, bool -- if true, the control is selected (checked) by default.
  * - disabled, bool -- if true, disables the control so it can not be toggled.
  */
-export default class Checkbox extends Component {
+export default class Checkbox extends React.Component {
   /**
    * check to see if an Id was passed in, if not generate one.
    */

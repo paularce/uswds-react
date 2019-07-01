@@ -1,19 +1,19 @@
-jest.unmock('../../../lib/components/PrimaryButton.jsx');
+jest.unmock('../../../lib/components/Button.jsx');
 
 import React from 'react';
 import {shallow} from 'enzyme';
 import sinon from 'sinon';
 
-import PrimaryButton from '../../../lib/components/PrimaryButton.jsx';
+import Button from '../../../lib/components/Button.jsx';
 
-describe('PrimaryButton', () => {
+describe('Button', () => {
 
   let buttonItem = null;
 
   const text = 'Test Label';
 
   beforeEach(function() {
-    buttonItem = shallow(<PrimaryButton text={text} />);
+    buttonItem = shallow(<Button text={text} />);
   });
 
   it('is defined', () => {
@@ -29,29 +29,29 @@ describe('PrimaryButton', () => {
   });
 
   it('is has a active class', () => {
-    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_ACTIVE} />);
+    buttonItem = shallow(<Button text={text} status={Button.STATUS_ACTIVE} />);
     expect(buttonItem.hasClass('usa-button-active')).toBe(true);
   });
 
   it('is has a hover class', () => {
-    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_HOVER} />);
+    buttonItem = shallow(<Button text={text} status={Button.STATUS_HOVER} />);
     expect(buttonItem.hasClass('usa-button-hover')).toBe(true);
   });
 
   it('is has a disabled status', () => {
-    buttonItem = shallow(<PrimaryButton text={text} disabled={true} />);
+    buttonItem = shallow(<Button text={text} disabled={true} />);
     expect(buttonItem.hasClass('usa-button-disabled')).toBe(true);
     expect(buttonItem.prop('disabled')).toBeDefined();
   });
 
   it('is has a big class', () => {
-    buttonItem = shallow(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
+    buttonItem = shallow(<Button text={text} size={Button.SIZE_BIG} />);
     expect(buttonItem.hasClass('usa-button-big')).toBe(true);
   });
 
   it('handles onClick', () => {
     var onClick = sinon.spy();
-    buttonItem = shallow(<PrimaryButton text={text} onClick={onClick} />);
+    buttonItem = shallow(<Button text={text} onClick={onClick} />);
     buttonItem.find('button').simulate('click');
     expect(onClick.called).toBeDefined();
   });

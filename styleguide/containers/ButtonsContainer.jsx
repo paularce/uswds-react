@@ -3,7 +3,7 @@ import Label from '../../lib/components/Label';
 import { DocsPage, DocsSection, DocsExample, DocsPreview } from './Docs.jsx';
 import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
-import PrimaryButton from "../../lib/components/PrimaryButton";
+import Button from "../../lib/components/Button";
 
 /**
  * Buttons content
@@ -16,7 +16,7 @@ export default function ButtonsContainer () {
       {/* Importing */}
       <DocsSection title="Importing">
         <Highlight language="javascript">
-          {`import PrimaryButton from "../lib/components/PrimaryButton";`}
+          {`import Button from "../lib/components/Button";`}
         </Highlight>
       </DocsSection>
 
@@ -43,13 +43,13 @@ export default function ButtonsContainer () {
           </TableRow>
           <TableRow>
             <TableHeaderCell>size</TableHeaderCell>
-            <TableCell>oneOf ['', 'PrimaryButton.SIZE_BIG']</TableCell>
+            <TableCell>oneOf ['', 'Button.SIZE_BIG']</TableCell>
             <TableCell>''</TableCell>
             <TableCell>...</TableCell>
           </TableRow>
           <TableRow>
             <TableHeaderCell>status</TableHeaderCell>
-            <TableCell>oneOf [''', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_HOVER']</TableCell>
+            <TableCell>oneOf [''', Button.STATUS_ACTIVE, Button.STATUS_HOVER']</TableCell>
             <TableCell>''</TableCell>
             <TableCell>...</TableCell>
           </TableRow>
@@ -62,33 +62,33 @@ export default function ButtonsContainer () {
           <DocsPreview>
             <h6>Primary Buttons</h6>
             <div className="button_wrapper">
-              <PrimaryButton text={'Default'} />
-              <PrimaryButton text={'Active'} status={PrimaryButton.STATUS_ACTIVE} />
-              <PrimaryButton text={'Hover'} status={PrimaryButton.STATUS_HOVER} />
+              <Button text={'Default'} />
+              <Button text={'Active'} status={Button.STATUS_ACTIVE} />
+              <Button text={'Hover'} status={Button.STATUS_HOVER} />
             </div>
             <h6>Disabled Button</h6>
             <div className="button_wrapper">
-              <PrimaryButton text={'Default'} status={PrimaryButton.STATUS_DISABLED} />
+              <Button text={'Default'} status={Button.STATUS_DISABLED} />
             </div>
             <h6>Big Button</h6>
             <div className="button_wrapper">
-              <PrimaryButton text={'Default'} size={PrimaryButton.SIZE_BIG} />
+              <Button text={'Default'} size={Button.SIZE_BIG} />
             </div>
           </DocsPreview>
           <Highlight className="html">
 {`<h6>Primary Buttons</h6>
 <div className="button_wrapper">
-  <PrimaryButton text={'Default'} />
-  <PrimaryButton text={'Active'} status={PrimaryButton.STATUS_ACTIVE} />
-  <PrimaryButton text={'Hover'} status={PrimaryButton.STATUS_HOVER} />
+  <Button text={'Default'} />
+  <Button text={'Active'} status={Button.STATUS_ACTIVE} />
+  <Button text={'Hover'} status={Button.STATUS_HOVER} />
 </div>
 <h6>Disabled Button</h6>
 <div className="button_wrapper">
-  <PrimaryButton text={'Default'} status={PrimaryButton.STATUS_DISABLED} />
+  <Button text={'Default'} status={Button.STATUS_DISABLED} />
 </div>
 <h6>Big Button</h6>
 <div className="button_wrapper">
-  <PrimaryButton text={'Default'} size={PrimaryButton.SIZE_BIG} />
+  <Button text={'Default'} size={Button.SIZE_BIG} />
 </div>`}
           </Highlight>
         </DocsExample>

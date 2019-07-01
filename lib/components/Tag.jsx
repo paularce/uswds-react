@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * A tag draws attention to new or categorized content elements.
@@ -10,7 +11,7 @@ import React, { Component, PropTypes } from 'react';
  * - classes: string, additional classes
  */
 
-export class Tag extends Component {
+export class Tag extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     classes: PropTypes.string

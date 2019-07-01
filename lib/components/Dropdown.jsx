@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 import InputLabel from "./InputLabel";
 import Utilities from "../helpers/utilities";
 
@@ -17,7 +18,7 @@ import Utilities from "../helpers/utilities";
  * - required: bool. Adds required label, required attribute and aria-required='true'
  * - errorMessage: string. If present triggers the error state and displays the error message
  */
-export default class Dropdown extends Component {
+export default class Dropdown extends React.Component {
   /**
    * Constructor
    * @param {object} props The props. See proptypes below.

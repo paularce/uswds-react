@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 /**
  * Provides a standard Navigation Bar.
@@ -48,10 +49,10 @@ NavigationBar.LAYOUT_BASIC    = "usa-search-big";
 NavigationBar.LAYOUT_EXTENDED = "usa-search-medium";
 
 NavigationBar.propTypes = {
-  layout: React.PropTypes.oneOf([ 
+  layout: PropTypes.oneOf([ 
     NavigationBar.LAYOUT_BASIC, 
     NavigationBar.LAYOUT_EXTENDED ]),
-  children: React.PropTypes.node
+  children: PropTypes.node
 };
 
 NavigationBar.defaultProps = {

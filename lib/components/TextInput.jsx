@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import InputLabel from './InputLabel';
 import Utilities from '../helpers/utilities';
 
@@ -19,7 +19,7 @@ import Utilities from '../helpers/utilities';
  * - isValid: bool. If true, sets isValid state - i.e. green border
  * - allowedChars: Validator object. If present, user can only type characters that match the given test
  */
-export default class TextInput extends Component {
+export default class TextInput extends React.Component {
   /**
    * constructor
    * @param {object} props The props that will be applied to this component.

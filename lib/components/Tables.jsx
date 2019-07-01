@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Class representing a label and a input of type="text"
@@ -13,7 +14,7 @@ import React, { Component, PropTypes } from 'react';
  * - data: array -- table boy's row and column data
  * - children: node -- If data is empty, then children will be the rows and cells
  */
-export class Table extends Component {
+export class Table extends React.Component {
   static propTypes = {
     columns: PropTypes.array.isRequired,
     borderless: PropTypes.bool,

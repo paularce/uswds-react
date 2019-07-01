@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 /**
  * Provides a standard Search Field.
@@ -61,7 +62,7 @@ SearchField.SIZE_MEDIUM = "usa-search-medium";
 SearchField.SIZE_SMALL  = "usa-search-small";
 
 SearchField.propTypes = {
-  size: React.PropTypes.oneOf([ 
+  size: PropTypes.oneOf([ 
     SearchField.SIZE_BIG, 
     SearchField.SIZE_MEDIUM, 
     SearchField.SIZE_SMALL ])

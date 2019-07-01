@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import InputLabel from './InputLabel';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Utilities from '../helpers/utilities';
 
 /**
@@ -15,7 +15,7 @@ import Utilities from '../helpers/utilities';
  * - checked, bool -- If true, item is initially set to checked
  * - disabled, bool --If item, item is disabled
  */
-export default class Radio extends Component {
+export default class Radio extends React.Component {
 
   /**
    * check to see if an Id was passed in, if not generate one.
@@ -55,8 +55,8 @@ Radio.propTypes = {
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
-  onChange: React.PropTypes.func,
-  className: React.PropTypes.string
+  onChange: PropTypes.func,
+  className: PropTypes.string
 };
 
 Radio.defaultProps = {

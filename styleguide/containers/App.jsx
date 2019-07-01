@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
@@ -70,7 +71,7 @@ class App extends React.Component
 }
 
 App.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 };
 
 /**

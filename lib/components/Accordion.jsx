@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import utilities from "../helpers/utilities";
 
@@ -124,9 +125,9 @@ Accordion.TYPE_BORDERLESS = "usa-accordion";
 Accordion.TYPE_BORDERED   = "usa-accordion--bordered";
 
 Accordion.propTypes = {
-  type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
-  children: React.PropTypes.node,
-  startCollapsed: React.PropTypes.bool
+  type: PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
+  children: PropTypes.node,
+  startCollapsed: PropTypes.bool
 };
 
 Accordion.defaultProps = {
@@ -303,12 +304,12 @@ export class AccordionItem extends React.Component
 }
 
 AccordionItem.propTypes = {
-  accordionIndex: React.PropTypes.number,
-  action: React.PropTypes.func,
-  children: React.PropTypes.node,
-  expanded: React.PropTypes.bool,
-  title: React.PropTypes.string,
-  titleElement: React.PropTypes.string
+  accordionIndex: PropTypes.number,
+  action: PropTypes.func,
+  children: PropTypes.node,
+  expanded: PropTypes.bool,
+  title: PropTypes.string,
+  titleElement: PropTypes.string
 };
 
 AccordionItem.defaultProps = {
